@@ -1,0 +1,174 @@
+:root {
+  --border-light: #e0e0e0;
+  --border-dark: #d0d7de;
+  --header-bg: #f8f9fa;
+  --hover-bg: #f1f3f4;
+  --text-muted: #5f6368;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f8f9fa;
+  color: #202124;
+}
+
+.sheet-container {
+  padding: 16px;
+}
+
+h1 {
+  margin: 0 0 4px 0;
+  font-size: 20px;
+  text-align: center;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+
+.resize-bar,
+.toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.resize-bar label {
+  font-size: 13px;
+  color: #202124;
+}
+
+.resize-bar input {
+  width: 60px;
+  margin-left: 4px;
+  padding: 4px 6px;
+  font-size: 13px;
+  border: 1px solid var(--border-dark);
+  border-radius: 4px;
+  text-align: center;
+}
+
+button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: white;
+  border: 1px solid var(--border-dark);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+button:hover {
+  background: var(--hover-bg);
+}
+
+button.primary {
+  background: #1a73e8;
+  border-color: #1a73e8;
+  color: white;
+}
+
+button.primary:hover {
+  background: #1558c0;
+}
+
+button.danger {
+  color: #d93025;
+}
+
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+
+.grid-wrapper {
+  border: 1px solid var(--border-dark);
+  background: white;
+  max-height: 70vh;
+  max-width: 100%;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+}
+
+
+table.grid {
+  border-collapse: collapse;
+  width: max-content;
+  background: white;
+}
+
+table.grid th,
+table.grid td {
+  border: 1px solid var(--border-light);
+  width: 72px;
+  height: 26px;
+  font-size: 13px;
+  text-align: center; 
+  vertical-align: middle;  
+  padding: 0;
+  white-space: nowrap;
+}
+
+
+
+table.grid th {
+  background: var(--header-bg);
+  font-weight: 600;
+  position: sticky;
+  z-index: 2;
+  cursor: default;
+}
+
+table.grid thead th {
+  top: 0;
+}
+
+table.grid tr th:first-child {
+  left: 0;
+  z-index: 3;
+}
+
+
+td.cell {
+  background: white;
+  cursor: default;    
+  transition: background 0.12s ease;
+}
+
+td.cell:hover {
+  background: var(--hover-bg);
+  cursor: default;   
+}
+
+
+td.cell input {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+  text-align: center;
+  padding: 0 4px;
+  background: white;
+  cursor: text;
+  overflow-x: auto;    
+  overflow-y: hidden;
+  white-space: nowrap;
+}
